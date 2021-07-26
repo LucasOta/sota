@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './shared/services/language.service';
-
-declare let gtag: Function;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,12 +18,6 @@ export class AppComponent {
 
     translate.setDefaultLang('en');
     translate.use(this.languageService.getLanguage().value);
-
-    this.router.events.subscribe(event => {
-      if(event instanceof NavigationEnd){
-        gtag('config', 'G-0BDE9TS7LR', {'page_path': event.urlAfterRedirects});        
-      }
-    });
   }
 
 }
