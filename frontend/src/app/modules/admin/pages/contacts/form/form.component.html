@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">{{title}}</h3>
+            </div>
+            <div class="form-horizontal">
+
+                <div class="card-body">
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Name *</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [value]='contact.name' disabled>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Company</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [value]="contact.company || '-'" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Email *</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [value]='contact.email' disabled>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [value]="contact.phone || '-'" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Country</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [value]="contact.country || '-'" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <label  class="col-sm-2 col-form-label">Message</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" [value]='contact.message' disabled></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="subscribed" [checked]="contact.newsletter" disabled>
+                        <label class="form-check-label" for="subscribed">Subscribed to Newsletter</label>
+                    </div>
+
+                </div>
+                
+                <div class="card-footer">
+                    <button (click)='onDelete()' type="button" class="btn btn-danger">{{ 'Delete' | translate}}</button>
+                    <button (click)='goToList()' type="button" class="btn btn-default float-right">{{ 'Back' | translate }}</button>                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

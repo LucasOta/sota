@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "1cd241a4-d445-42f0-b8ba-3a00cc23b65f",
+		"name": "sota",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Lucas",
+							"description": "*",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"description": "*",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "1",
+							"description": "0- Client, 1-User, 2- Admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/user/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMzk0YTc2M2QzODNiMDg4OGNjNmVlZSIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0sImlhdCI6MTYwMDkxODI3OSwiZXhwIjoxNjAzNTEwMjc5fQ.XqfecLFbyAVwNva6WJGKuh33gBgg_ub6Apsx-cbH5nU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":[\r\n        {\r\n            \"language\": \"en\",\r\n            \"quote\": \"Brand Identity\"\r\n        },\r\n        {\r\n            \"language\": \"es\",\r\n            \"quote\": \"Identidad de Marca\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/category/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/getAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/category/5f6fa8225487ae027c72773c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"5f6fa8225487ae027c72773c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmMzk0YTc2M2QzODNiMDg4OGNjNmVlZSIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0sImlhdCI6MTYwMDkxODI3OSwiZXhwIjoxNjAzNTEwMjc5fQ.XqfecLFbyAVwNva6WJGKuh33gBgg_ub6Apsx-cbH5nU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"5f6c19a15811c75be06139fa\",\r\n    \"name\":{\r\n        \"translations\":[\r\n        {\r\n            \"language\": \"en\",\r\n            \"quote\": \"Brand Identities\"\r\n        },\r\n        {\r\n            \"language\": \"es\",\r\n            \"quote\": \"Identidad de Marcas\"\r\n        }\r\n    ]\r\n    } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/category/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"category",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "file/imagen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/file/image/categories/5f50812c6b45664914e59ee3/3vunskqefokemdoesf.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"file",
+						"image",
+						"categories",
+						"5f50812c6b45664914e59ee3",
+						"3vunskqefokemdoesf.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "project/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmN2JlZDI4YWIzZjAwNWJjODZkZGNmOCIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW4ifSwiaWF0IjoxNjAyODE4NTI3LCJleHAiOjE2MDU0MTA1Mjd9.gHdukPVTyJkieSFPGZWyMUOVIdG0AkpCWLuAufL-kBs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": [\r\n        {\r\n            \"language\": \"en\",\r\n            \"quote\": \"Project 2\"\r\n        },\r\n        {\r\n            \"language\": \"es\",\r\n            \"quote\": \"Proyecto 2\"\r\n        }\r\n    ],\r\n    \"description\": [\r\n        {\r\n            \"language\": \"en\",\r\n            \"quote\": \"Project 2 description\"\r\n        },\r\n        {\r\n            \"language\": \"es\",\r\n            \"quote\": \"Descripción del proyecto 2\"\r\n        }\r\n    ],\r\n    \"blocks\": [],\r\n\r\n    \"clients\": [],\r\n    \"industries\": [],\r\n    \"disciplines\": [],\r\n\r\n    \"featured\": true,\r\n    \"playground\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/project/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"project",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "project/get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "en"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/project/5f891437e30ff65a680c5816",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"project",
+						"5f891437e30ff65a680c5816"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "project/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "en"
+					},
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVmN2JlZDI4YWIzZjAwNWJjODZkZGNmOCIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW4ifSwiaWF0IjoxNjAyODE4NTI3LCJleHAiOjE2MDU0MTA1Mjd9.gHdukPVTyJkieSFPGZWyMUOVIdG0AkpCWLuAufL-kBs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/project/5f891437e30ff65a680c5816",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"project",
+						"5f891437e30ff65a680c5816"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Lucas 2",
+							"description": "*",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"description": "*",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "this is a message",
+							"description": "*",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "country",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "newsletter",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/contact/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact/getById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMmE4ZTY5N2I2NWNkMjM5YzdhYmFkZSIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW4ifSwiaWF0IjoxNjEzNzAyMjk0LCJleHAiOjE2MTYyOTQyOTR9.-bst_1zJ9hUavrdUVr3NY4uR5TbEZH4QFXXYRXt3d_M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/contact/602f234db40a5858a00779d9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"602f234db40a5858a00779d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact/getAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMmE4ZTY5N2I2NWNkMjM5YzdhYmFkZSIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW4ifSwiaWF0IjoxNjEzNzAyMjk0LCJleHAiOjE2MTYyOTQyOTR9.-bst_1zJ9hUavrdUVr3NY4uR5TbEZH4QFXXYRXt3d_M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMmE4ZTY5N2I2NWNkMjM5YzdhYmFkZSIsIm5hbWUiOiJMdWNhcyIsImVtYWlsIjoiYWRtaW4ifSwiaWF0IjoxNjEzNzAyMjk0LCJleHAiOjE2MTYyOTQyOTR9.-bst_1zJ9hUavrdUVr3NY4uR5TbEZH4QFXXYRXt3d_M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/contact/602f234db40a5858a00779d9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact",
+						"602f234db40a5858a00779d9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

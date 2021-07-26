@@ -1,0 +1,18 @@
+<div class="row form-group">
+    <label  class="col-sm-2 col-form-label">{{ textInputConfig.fieldName }} <ng-container *ngIf="textInputConfig.required">*</ng-container></label>
+    <div class="col-sm-10">
+        <input 
+            [formControl]="textInputConfig.formControl" 
+            type="text" 
+            class="form-control" 
+            [ngClass]="{ 'is-invalid': (submitted$ | async) && textInputConfig.formControl.errors }" 
+            placeholder="{{ textInputConfig.placeholder }}">
+
+        <!-- <div  class="invalid-feedback">
+            <div>Name is required</div>
+        </div> -->
+        <div *ngIf="(submitted$ | async) && textInputConfig.formControl.errors" class="invalid-feedback">
+            <div *ngIf="textInputConfig.formControl.errors.required">{{ textInputConfig.fieldName }} is required</div>
+        </div>
+    </div>
+</div>

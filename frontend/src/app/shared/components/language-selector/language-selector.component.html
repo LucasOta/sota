@@ -1,0 +1,13 @@
+<div class="langSel">
+
+    <a class="nav-link" data-toggle="dropdown" [innerHTML]="(language$ | async).icon"></a>
+    
+    <div class="dropdown-menu dropdown-menu-right p-0">
+        <ng-container  *ngFor="let lang of languageSelectorConfig.languages">
+            <a (click)="setSelectedLanguage(lang)" class="dropdown-item" [ngClass]="{'active': (language$ | async) === lang}">
+                <span [innerHTML]="lang.icon"></span> {{lang.name}}        
+            </a>
+        </ng-container>
+    </div>
+
+</div>

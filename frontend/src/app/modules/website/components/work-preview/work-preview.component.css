@@ -1,0 +1,44 @@
+.square {
+    width: 100%;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.project_title, .project_clients {
+    margin-bottom: 0 !important;
+}
+.project_clients span {
+    text-transform: none;
+}
+.dk-portfolio-item-info span {
+    font-weight: 400;
+}
+
+.dk-portfolio-item-image-size{
+    padding-top: 0 !important;
+}
+
+.dk-portfolio-item-style-2:hover .dk-portfolio-item-info .dk-portfolio-item-title {
+    color: var(--primary);
+}
+
+.dk-portfolio-item{
+    cursor: pointer;
+}
+
+.dk-portfolio-item-info{
+    padding-top: 10px;
+}
+
+.dk-portfolio-item-category span{
+    letter-spacing: normal;
+}

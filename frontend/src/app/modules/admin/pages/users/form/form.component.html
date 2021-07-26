@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card card-secondary">
+            <div class="card-header">
+                
+                <h3 class="card-title">{{title}}</h3>
+
+            </div>
+            <form class="form-horizontal" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                <div class="card-body">
+
+                    <app-text-input [textInputConfig]="nameTextInputConfig"></app-text-input>
+                    <app-text-input [textInputConfig]="emailTextInputConfig"></app-text-input>
+                    <ng-container *ngIf="!this.id">
+                        <app-text-input [textInputConfig]="passwordTextInputConfig"></app-text-input>
+                    </ng-container>
+                    <app-image-picker [imgPickerConfig]="imgPickerConfig"></app-image-picker>
+
+                </div>
+                
+                <app-card-footer [cardFooterConfig]="cardFooterConfig"></app-card-footer>
+                
+            </form>
+        </div>
+    </div>
+</div>

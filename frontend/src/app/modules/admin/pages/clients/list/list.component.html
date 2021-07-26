@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-12">
+        <button [routerLink]="'../create'" type="button" class="btn btn-outline-success" style="margin-bottom: 1rem">{{ 'Add' | translate }}</button>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+          
+        <div class="card-body">
+          <table id="clients" class="table table-hover">
+            <thead>
+                <tr>
+                  <th>{{ 'Name' | translate }}</th>
+                  <th>{{ 'Website' | translate }}</th>
+                  <th>{{ 'Created' | translate }}</th>
+                  <th>{{ 'Modified' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of clients; trackBy: trackByFn" class="pointer">
+                  <td (click)='edit(c._id)'>{{c.name}}</td>
+                  <td (click)='edit(c._id)' *ngIf="!c.website"><i>No website assigned</i></td>
+                  <td *ngIf="c.website"><a href="http://{{c.website}}" target="_blank" rel="noopener noreferrer">{{c.website}}</a></td>
+                  <td (click)='edit(c._id)'>{{c.created | date:'d/M/yy, h:mm a'}}</td>
+                  <td (click)='edit(c._id)'>{{c.modified | date:'d/M/yy, h:mm a'}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
+  </div>

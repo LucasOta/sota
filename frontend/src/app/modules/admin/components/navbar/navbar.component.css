@@ -1,0 +1,5 @@
+.nav-link{
+    display: block !important;
+    float: none !important;
+    padding: inherit !important;
+}

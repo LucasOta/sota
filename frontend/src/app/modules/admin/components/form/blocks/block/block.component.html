@@ -1,0 +1,36 @@
+<div class="block" [ngStyle]="{'color': fontColorTextInputConfig.formControl.value, 'background-color': bgColorTextInputConfig.formControl.value }">    
+    <div class="row">
+        <div class="col-6"> <app-text-input [textInputConfig]="bgColorTextInputConfig"></app-text-input> </div>
+        <div class="col-6"> <app-text-input [textInputConfig]="fontColorTextInputConfig"></app-text-input> </div>
+    </div>    
+    
+    <h4>Items</h4>
+    <div class="btn-group">
+        <button type="button" class="btn btn-success dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown" style="margin-bottom: 1rem">{{ 'Add' | translate }}
+          <span class="sr-only">Item Dropdown</span>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.Title)">Title</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.Text)">Text</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.Video)">Video</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.Image)">Image</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.ImageGroup)">Image Group</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.Testimonial)">Testimonial</a>
+            <a class="dropdown-item" (click)="addItem(itemTypesForTemplate.TextImage)">Image and Text</a>
+          </div>
+        </button>
+    </div>
+
+    <div cdkDropList (cdkDropListDropped)="drop($event)" class="items-list" *ngIf="block" style="color: #000">
+        <div cdkDrag *ngFor="let item of $any(block.controls.items).controls;let i=index;" class="item-box">
+            <div cdkDragHandle ><i class="fas fa-bars"></i></div>
+            
+            <div class="deleteBtn">
+                <button (click)="deleteItem(i)" type="button" class="btn btn-tool" ><i class="fas fa-times"></i></button>
+            </div>
+            <div class="item-container">
+                <div class="item-custom-placeholder" *cdkDragPlaceholder></div>
+                <app-item [item]="item"></app-item>
+            </div>
+        </div>
+    </div>
+</div>

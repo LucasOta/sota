@@ -1,0 +1,88 @@
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="/favicon.ico" alt="Sota Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Sota Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <div class="div_img_circle img-circle elevation-2" [style]=" (currentUser.img | image : 'users' : currentUser._id ) | domSanitizer "></div>
+<!--           
+          <img src="../../../../../assets/img/cristian.jpg" class="img-circle elevation-2" alt="User Image"> -->
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{ currentUser.name }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+          <li class="nav-header">{{ 'Modules' | translate }}</li>
+          <li class="nav-item">
+            <a [routerLink]="'projects'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon far fa-address-card"></i>
+              <p>
+                {{ 'Projects' | translate }}                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="'clients'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                {{ 'Clients' | translate }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="'disciplines'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                {{ 'Disciplines' | translate }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="'industries'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                {{ 'Industries' | translate }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="'contacts'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                {{ 'Contacts' | translate }}
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-header">{{ 'Admin' | translate }}</li>
+          <li class="nav-item">
+            <a [routerLink]="'users'" routerLinkActive="active" class="nav-link">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                {{ 'Users' | translate }}                
+              </p>
+            </a>
+          </li>          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div id="sidebar-overlay" (click)="closeSideBar()"></div>

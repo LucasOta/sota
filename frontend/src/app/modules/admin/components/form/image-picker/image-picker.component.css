@@ -1,0 +1,21 @@
+.custom_select_btn{
+    padding: 0 1.25rem 1.25rem 0;
+}
+
+.custom_img_card .card-body{
+    padding: 0;
+}
+.custom_img_card .card-body .cornerBtn{
+    position: absolute;
+    display: block;
+    right: 0;
+    border-radius: 0.25rem;
+    background-color: #52565859;
+}
+.custom_img_card .card-body .img{
+    border-radius: 0.25rem;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

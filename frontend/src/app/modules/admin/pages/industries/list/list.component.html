@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-12">
+      <button [routerLink]="'../create'" type="button" class="btn btn-outline-success" style="margin-bottom: 1rem">{{ 'Add' | translate }}</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+        
+      <div class="card-body">
+        <table id="industries" class="table table-hover">
+          <thead>
+              <tr>
+                <th>{{ 'Name' | translate }}</th>
+                <th>{{ 'Created' | translate }}</th>
+                <th>{{ 'Modified' | translate }}</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let c of industries; trackBy: trackByFn" (click)='edit(c._id)' class="pointer">
+                <td>{{c.name[0].quote}}</td>
+                <td>{{c.created | date:'d/M/yy, h:mm a'}}</td>
+                <td>{{c.modified | date:'d/M/yy, h:mm a'}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

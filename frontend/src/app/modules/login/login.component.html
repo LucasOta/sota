@@ -1,0 +1,35 @@
+<div class="login_page">
+    <div class="login_card">
+
+        <div class="">
+            <h2>Welcome!</h2>
+    
+            <div class="login_form">
+                <div class="">
+                    <p class="">Sign in to start your session</p>
+        
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="input_div">
+                            <input type="text" formControlName="username" class="" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Email" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid_feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="input_div">
+                            <input type="password" formControlName="password" class="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid_feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="card_bottom">
+                            <button type="submit" class="btn btn-primary">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

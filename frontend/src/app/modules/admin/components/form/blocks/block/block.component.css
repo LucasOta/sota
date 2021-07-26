@@ -1,0 +1,65 @@
+.block{
+    padding: 1.5rem;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.cdk-drag-preview {
+    background-color: #FFF0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.cdk-drag-preview .cdk-drag-handle {
+    color: #343a40;
+}
+.cdk-drag-preview .block-container {
+    background-color: #FFF;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.items-list.cdk-drop-list-dragging .item-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.item-custom-placeholder {
+    background: #e4e4e4;
+    border: dotted 2px #ccc;
+    min-height: 10em;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+}
+.item-box{
+    display: flex;
+    align-items: center;
+}
+
+.cdk-drag-handle i{
+    cursor: n-resize;
+}
+.cdk-drag-handle i{
+    margin-right: 5px;
+    color: #ccc;
+}
+.cdk-drag-handle:hover i{
+    color: #343a40;
+}
+
+.item-container{
+    flex: 1;
+}
+
+
+.deleteBtn {
+    align-self: baseline;
+    right: 3rem;
+    position: absolute;
+}
+.deleteBtn .btn{
+    color: #a2a3a4;
+}

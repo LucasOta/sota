@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col-12">
+      <button [routerLink]="'../create'" type="button" class="btn btn-outline-success" style="margin-bottom: 1rem">{{ 'Add' | translate }}</button>
+  </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            
+            <div class="card-body">
+              <table id="example1" class="table table-hover">
+                <thead>
+                    <tr>
+                      <th>{{ 'Name' | translate }}</th>
+                      <th>{{ 'Created' | translate }}</th>
+                      <th>{{ 'Modified' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of categories; trackBy: trackByFn" (click)='edit(c._id)' class="pointer">
+                    <!-- <tr [routerLink]='../edit' [state]='{${c}}' *ngFor="let c of categories; trackBy: trackByFn" class="pointer"> -->
+                      <!-- TODO: add options on check -->
+                      <!-- <td><input type="checkbox" class="" id="exampleCheck1"></td> -->
+                      <td>{{c.name[0].quote}}</td>
+                      <td>{{c.created}}</td>
+                      <td>{{c.modified}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+    </div>
+</div>
+
+<!-- page script -->
+<script>
+    $(function () {
+      $('#example1').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>

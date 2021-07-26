@@ -1,0 +1,32 @@
+<input hidden type="file" (change)="onSelectFile($event)" class="custom-file-input" #inputFile>
+
+<div class="row">
+    
+    <div class="col-12 col-form-label">
+        <button (click)="uploadFile()" [disabled]="imgPickerConfig.formArray.value.length >= imgPickerConfig.maxImgs && imgPickerConfig.maxImgs > 0" type="button" class="btn btn-default">{{ imgPickerConfig.fieldName}}</button>
+        <span class="note">
+            (Note: You can only select up to {{imgPickerConfig.maxImgs}} image/s.)
+        </span>
+    </div>
+    
+    <div class="col-md-3" *ngFor="let img of imgPickerConfig.oldImages">
+        <div class="card custom_img_card" *ngIf="img != 'empty'">
+            <div class="card-body">
+                <div class="cornerBtn">
+                    <button type="button" class="btn btn-tool" (click)='deleteImg(img)'><i class="fas fa-times"></i></button>
+                </div>
+                <div class="img" [style]=" (img | image : (moduleName$ | async) : (elementId$ | async) ) | domSanitizer "></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" *ngFor="let img of imgs; trackBy: trackByFn">
+        <div class="card custom_img_card">
+            <div class="card-body">
+                <div class="cornerBtn">
+                    <button type="button" class="btn btn-tool" (click)='deleteImg(img.name)'><i class="fas fa-times"></i></button>
+                </div>
+                <div *ngIf="img.url" class="img" [style]=" img.url | domSanitizer "></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12">
+        <button [routerLink]="'../create'" type="button" class="btn btn-outline-success" style="margin-bottom: 1rem">{{ 'Add' | translate }}</button>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-12">
+        <div class="card">
+            
+        <div class="card-body">
+            <table id="users" class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>{{ 'Name' | translate }}</th>
+                    <th>{{ 'Email' | translate }}</th>
+                    <th>{{ 'Created' | translate }}</th>
+                    <th>{{ 'Modified' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of users; trackBy: trackByFn" (click)='edit(c._id)' class="pointer">
+                    <td>
+                        <div class="div_img_circle img-circle elevation-2" [style]=" (c.img | image : moduleName : c._id ) | domSanitizer "></div>
+                    </td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.created | date:'d/M/yy, h:mm a'}}</td>
+                    <td>{{c.modified | date:'d/M/yy, h:mm a'}}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+</div>

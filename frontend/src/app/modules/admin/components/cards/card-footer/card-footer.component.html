@@ -1,0 +1,6 @@
+<div class="card-footer">
+    <button (click)='cardFooterConfig.cancelAction()' type="button" class="btn btn-default">{{ 'Cancel' | translate }}</button>
+
+    <button type="submit" class="btn btn-success float-right last_btn">{{ cardFooterConfig.id ? ('Edit' | translate) : ('Create' | translate) }}</button>
+    <button (click)='cardFooterConfig.deleteAction()' *ngIf="cardFooterConfig.id" type="button" class="btn btn-danger float-right">{{ 'Delete' | translate}}</button>
+</div>

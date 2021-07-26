@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+        
+      <div class="card-body">
+        <table id="industries" class="table table-hover">
+          <thead>
+              <tr>
+                <th>{{ 'Name' | translate }}</th>
+                <th>{{ 'Email' | translate }}</th>
+                <th>{{ 'Company' | translate }}</th>
+                <th>{{ 'Created' | translate }}</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let c of contacts; trackBy: trackByFn" (click)='view(c._id)' class="pointer">
+                <td>
+                  <span class="badge bg-green" *ngIf="!c.read">Unread</span>
+                  {{c.name}} 
+                </td>
+                <td>{{c.email}}</td>
+                <td>{{c.company}}</td>
+                <td>{{c.created | date:'d/M/yy, h:mm a'}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

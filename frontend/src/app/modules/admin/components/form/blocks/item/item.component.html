@@ -1,0 +1,42 @@
+<div class="item">    
+    <div class="row">
+        
+        <!-- Title -->
+        <div *ngIf="show(itemElements.Title)" class="col-12">
+            <app-multilanguage-text-input [multilanguageTextInputConfig]="titleMultilanguageInputConfig"></app-multilanguage-text-input>
+        </div>
+        
+        <!-- Subtitle -->
+        <div *ngIf="show(itemElements.Subtitle)" class="col-12">
+            <app-multilanguage-text-input [multilanguageTextInputConfig]="subtitleMultilanguageInputConfig"></app-multilanguage-text-input>
+        </div>
+        
+        <!-- Description -->
+        <div *ngIf="show(itemElements.Description)" class="col-12">            
+            <app-multilanguage-text-area [multilanguageTextAreaConfig]="descMultilanguageAreaConfig"></app-multilanguage-text-area>
+        </div>
+        
+        <!-- Video -->
+        <div *ngIf="show(itemElements.Video)" class="col-12">
+            <app-text-input [textInputConfig]="videoTextInputConfig"></app-text-input>
+        </div>
+        
+        <!-- FullWidth-->
+        <div *ngIf="show(itemElements.FullWidth)" class="col-12">
+            <app-checkbox [checkboxConfig]="fullWidthCheckboxConfig"></app-checkbox>
+        </div>
+        
+        <!-- Image -->
+        <div *ngIf="show(itemElements.Image)" class="col-12">
+            <app-image-picker [imgPickerConfig]="imgPickerConfig"></app-image-picker>
+        </div>
+        
+        <!-- Testimonial -->
+        <div *ngIf="show(itemElements.Testimonial)" class="col-12 testimonial">
+            <app-multilanguage-text-area [multilanguageTextAreaConfig]="quoteMultilanguageAreaConfig"></app-multilanguage-text-area>
+            <app-multilanguage-text-input [multilanguageTextInputConfig]="jobTitleMultilanguageInputConfig"></app-multilanguage-text-input>
+            <app-text-input [textInputConfig]="nameTextInputConfig"></app-text-input>
+        </div>
+
+    </div>  
+</div>  

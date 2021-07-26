@@ -1,0 +1,19 @@
+<a (click)='view()' class="dk-portfolio-item dk-portfolio-item-style-2 dk-portfolio-item-light">
+    <span class="dk-portfolio-item-image">
+        
+        <span class="dk-portfolio-item-image-size" data-portfolio-size="100%"></span>
+        
+        <span class="dk-portfolio-item-overlay" style="background-color: rgba(255, 255, 255, .15)"></span>
+        <div class="square img" [style]=" (project.thumbnail | image : 'projects' : project._id ) | domSanitizer "></div>
+    </span>
+    
+    <span class="dk-portfolio-item-info">
+        <span class="h3 dk-portfolio-item-title project_title pt30 ft_black">{{project.title[0].quote}}</span>
+        
+        <span class="dk-portfolio-item-category project_clients pt30 ft_grey-100">
+            <span *ngFor="let c of project.clients">{{c.name}}</span>
+        </span>
+        
+    </span>
+    
+</a>

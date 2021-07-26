@@ -1,0 +1,35 @@
+.clients{
+    font-weight: 700;
+    display: inline;
+    margin-right: 1em;
+}
+
+h1, .bold{    
+    font-weight: 600;
+}
+
+.project_header{
+    margin-bottom: 2em;
+}
+
+.dk-list {
+    margin: 2em !important;
+}
+
+.dk-list > li + li {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 991px) {
+    .only_desktop{
+        display: none;
+    }
+    .dk-list {
+        margin: 0em !important;
+    }
+}
+@media (min-width: 992px) {
+    .only_mobile{
+        display: none;
+    }
+}

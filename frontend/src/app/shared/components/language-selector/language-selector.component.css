@@ -1,0 +1,22 @@
+/*flag-icon-css*/
+@import "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css";
+
+.langSel{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-link{
+    display: inline;
+    float: right;
+    padding: 0;
+}
+
+.dropdown-item{
+    color: #212529 !important;
+}
+.active{
+    color: #ffffff !important;
+}

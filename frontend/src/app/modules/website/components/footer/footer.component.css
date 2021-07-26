@@ -1,0 +1,39 @@
+.dk-footer{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+a{
+    color: var(--white);
+    font-size: calc(var(--base-font-size) * 30) !important;
+}
+
+.space{
+    margin: 2em;
+}
+.space_mobile{
+    margin: 4em;
+}
+
+@media (max-width: 768px) {
+    .only_desktop{
+        display: none;
+    }
+    .text{
+        z-index: 1;
+    }
+    .navigation_list{
+        flex-direction: row;
+    }
+    .navigation_list a{
+        margin-right: 2em;
+    }
+    .dk-box-2{
+        padding: 80px 0 !important;
+    }
+}
+@media (min-width: 769px) {
+    .only_mobile{
+        display: none;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="row form-group">
+    <label  class="col-sm-2 col-form-label">{{ textAreaConfig.fieldName }} <ng-container *ngIf="textAreaConfig.required">*</ng-container></label>
+    <div class="col-sm-10">
+        <textarea
+            [formControl]="textAreaConfig.formControl" 
+            class="form-control" 
+            rows="3"
+            [ngClass]="{ 'is-invalid': (submitted$ | async) && textAreaConfig.formControl.errors }" 
+            placeholder="{{ textAreaConfig.placeholder }}"></textarea>
+            
+        <div *ngIf="(submitted$ | async) && textAreaConfig.formControl.errors" class="invalid-feedback">
+            <div *ngIf="textAreaConfig.formControl.errors.required">{{ textAreaConfig.fieldName }} is required</div>
+        </div>
+    </div>
+</div>

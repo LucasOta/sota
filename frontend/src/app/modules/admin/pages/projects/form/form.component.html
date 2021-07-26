@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">{{pageTitle}}</h3>
+
+                <app-language-selector [languageSelectorConfig]="languageSelectorConfig"></app-language-selector>
+
+            </div>
+            <form class="form-horizontal" [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                <div class="card-body">
+
+                    <app-text-input [textInputConfig]="orderInputConfig"></app-text-input>
+                    <app-multilanguage-text-input [multilanguageTextInputConfig]="titleMultilanguageInputConfig"></app-multilanguage-text-input>
+                    <app-multilanguage-text-area [multilanguageTextAreaConfig]="descMultilanguageAreaConfig"></app-multilanguage-text-area>
+                    <app-checkbox [checkboxConfig]="playgroundCheckboxConfig"></app-checkbox>
+                    <app-checkbox [checkboxConfig]="featuredCheckboxConfig"></app-checkbox>
+                    <div class="row">
+                        <div class="col-md-4"> <app-drop-down-list [dropDownListInputConfig]="clientsDropDownListInputConfig"></app-drop-down-list> </div>
+                        <div class="col-md-4"> <app-drop-down-list [dropDownListInputConfig]="industriesDropDownListInputConfig"></app-drop-down-list> </div>
+                        <div class="col-md-4"> <app-drop-down-list [dropDownListInputConfig]="disciplinesDropDownListInputConfig"></app-drop-down-list> </div>
+                    </div>
+
+                    <app-image-picker [imgPickerConfig]="coverImgPickerConfig"></app-image-picker>
+                    <app-image-picker [imgPickerConfig]="thumbImgPickerConfig"></app-image-picker>
+
+                    <app-blocks [blocks]="createForm.get('blocks')"></app-blocks>
+                </div>
+                
+                <app-card-footer [cardFooterConfig]="cardFooterConfig"></app-card-footer>
+                
+            </form>
+        </div>
+    </div>
+</div>

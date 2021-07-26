@@ -1,0 +1,15 @@
+<div class="form-group">
+    <label>{{dropDownListInputConfig.fieldName}}</label>
+    <select 
+        multiple 
+        class="custom-select" 
+        [formControl]="dropDownListInputConfig.formControl"
+        [ngClass]="{ 'is-invalid': (submitted$ | async) && dropDownListInputConfig.formControl.errors }">
+        <option *ngFor="let o of dropDownListInputConfig.options" [ngValue]="o.value">{{o.key}}</option>
+    </select>
+
+    <div *ngIf="(submitted$ | async) && dropDownListInputConfig.formControl.errors" class="invalid-feedback">
+        <div *ngIf="dropDownListInputConfig.formControl.errors.required">{{ dropDownListInputConfig.fieldName }} is required</div>
+    </div>
+
+</div>
