@@ -1,39 +1,37 @@
-import { Schema, Document, model } from 'mongoose';
+import { Document, model, Schema } from "mongoose";
 import { Translation } from "../../classes/translation";
 
 const disciplineSchema = new Schema({
-
-    name: [
-        {
-            _id:false,
-            language: String,
-            quote: String,
-        }
-    ],
-
-    created: {
-        type: Date
+  name: [
+    {
+      _id: false,
+      language: String,
+      quote: String,
     },
-    modified: {
-        type: Date
-    },
-    deleted: {
-        type: Date
-    }
+  ],
 
+  created: {
+    type: Date,
+  },
+  modified: {
+    type: Date,
+  },
+  deleted: {
+    type: Date,
+  },
 });
 
-disciplineSchema.pre<IDiscipline>('save', function (next) {
-    this.created = new Date();
-    next();
+disciplineSchema.pre<IDiscipline>("save", function (next) {
+  this.created = new Date();
+  next();
 });
 
 export interface IDiscipline extends Document {
-    name: Translation[];
+  name: Translation[];
 
-    created?: Date;
-    modified?: Date;
-    deleted?: Date;
+  created?: Date;
+  modified?: Date;
+  deleted?: Date;
 }
 
-export const Discipline = model<IDiscipline>('Discipline', disciplineSchema);
+export const Discipline = model<IDiscipline>("Discipline", disciplineSchema);
