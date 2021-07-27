@@ -1,37 +1,8 @@
-/*asdf*/
-@import "../../../assets/plugins/fontawesome-free/css/all.min.css";
-
 /*Ionicons*/
 @import "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 
-/*Tempusdominus Bbootstrap 4*/
-@import "../../../assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css";
-
-/*iCheck*/
-@import "../../../assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css";
-
-/*JQVMap*/
-@import "../../../assets/plugins/jqvmap/jqvmap.min.css";
-
-/*DataTables*/
-@import "../../../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css";
-@import "../../../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css";
-
 /*Theme style*/
 @import "../../../assets/css/adminlte.css";
-
-/*overlayScrollbars*/
-@import "../../../assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css";
-
-/*Daterange picker*/
-@import "../../../assets/plugins/daterangepicker/daterangepicker.css";
-
-/*summernote*/
-@import "../../../assets/plugins/summernote/summernote-bs4.css";
-
-/*Select2*/
-@import "../../../assets/plugins/select2/css/select2.min.css";
-
 /*AnimateCSS*/
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css";
 
